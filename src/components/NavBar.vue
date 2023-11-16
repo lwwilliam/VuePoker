@@ -144,6 +144,7 @@ const player_name = ref([] as string[]);
     align-items: center;
     justify-content: center; */
     height: 2rem;
+    width: 30%;
   }
 
 
