@@ -4,8 +4,9 @@ import { ref, defineProps } from 'vue';
 import PopUp from './PopUp.vue';
 
 const show_overlay = ref(false);
-const { player_name } = defineProps(['player_name']);
-const emit = defineEmits();
+// const { player_name } = defineProps(['player_name']);
+const props = defineProps(['player_name']);
+const emit = defineEmits(['gameStart']);
 
 const closeOverlay = () => {
   show_overlay.value = false;
@@ -13,7 +14,7 @@ const closeOverlay = () => {
 
 const overlayButton = () => {
   show_overlay.value = true;
-  player_name.splice(0);
+  props.player_name.splice(0);
 };
 
 const gameStart = () => {
@@ -26,10 +27,10 @@ const gameStart = () => {
 <template>
   <div class="sidebar_container">
       <button @click="overlayButton" class="sidebar_content">
-        Gmme Init
+        Game Init
       </button>
-      <button @click="gameStart">
-        Game Start
+      <button @click="gameStart" class="sidebar_content">
+        Draw
       </button>
     </div>
     <div v-if="show_overlay" class="overlay">

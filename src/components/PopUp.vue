@@ -5,7 +5,7 @@ import { ref, defineEmits, defineProps } from 'vue';
 const player_number = ref([2, 3, 4, 5, 6] as const);
 const player_selected = ref(0);
 const { player_name } = defineProps(['player_name']);
-const emit = defineEmits();
+const emit = defineEmits(['closeOverlay']);
 
 const submitForm = () => {
   for (let i = 0; i < player_selected.value; i++) {
