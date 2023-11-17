@@ -5,6 +5,7 @@ import PopUp from './PopUp.vue';
 
 const show_overlay = ref(false);
 const { player_name } = defineProps(['player_name']);
+const emit = defineEmits();
 
 const closeOverlay = () => {
   show_overlay.value = false;
@@ -15,12 +16,20 @@ const overlayButton = () => {
   player_name.splice(0);
 };
 
+const gameStart = () => {
+  // console.log('Game Start');
+  emit('gameStart');
+};
+
 </script>
 
 <template>
   <div class="sidebar_container">
       <button @click="overlayButton" class="sidebar_content">
-        Overlay
+        Gmme Init
+      </button>
+      <button @click="gameStart">
+        Game Start
       </button>
     </div>
     <div v-if="show_overlay" class="overlay">
