@@ -6,7 +6,7 @@ import PopUp from './PopUp.vue';
 const show_overlay = ref(false);
 // const { player_name } = defineProps(['player_name']);
 const props = defineProps(['player_name']);
-const emit = defineEmits(['gameStart']);
+const emit = defineEmits(['gameStart', 'resetPoints']);
 
 const closeOverlay = () => {
   show_overlay.value = false;
@@ -15,6 +15,7 @@ const closeOverlay = () => {
 const overlayButton = () => {
   show_overlay.value = true;
   props.player_name.splice(0);
+  emit('resetPoints');
 };
 
 const gameStart = () => {
