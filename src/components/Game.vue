@@ -38,8 +38,8 @@ watch(() => props.start, (newStart) => {
 watch(() => props.reset, (newReset) => {
   if (newReset) {
     console.log('reset');
-    // point_arr.value.splice(0);
     point_arr.value = [0, 0, 0, 0, 0, 0];
+    num_arr.value.splice(0);
     emit('resetPoints');
   }
 });
@@ -60,7 +60,7 @@ watch(() => props.reset, (newReset) => {
           Point: {{ point_arr[index] }}
         </div>
       </div>
-      <img :src="`./src/components/images/cards/${cards[num_arr[index] - 1]}.png`" alt="card"/>
+      <img v-if="cards[num_arr[index] - 1]" :src="`./src/components/images/cards/${cards[num_arr[index] - 1]}.png`" alt="card"/>
     </div>
 
   </div>
@@ -69,7 +69,6 @@ watch(() => props.reset, (newReset) => {
 <style scoped>
 
   .game_container {
-    /* border: 2px solid rgb(255, 0, 0); */
     height: 90%;
     width: 100%;
     display: grid;
@@ -99,7 +98,9 @@ watch(() => props.reset, (newReset) => {
     object-fit: contain;
     color: white;
     padding-left: 20px;
-    text-align: justify;
+    display: flex;
+    align-items: center;
+    font-size: x-large;
   }
 
   img {

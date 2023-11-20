@@ -28,7 +28,7 @@ const gameStart = () => {
 <template>
   <div class="sidebar_container">
       <button @click="overlayButton" class="sidebar_content">
-        Game Init
+          Game Init
       </button>
       <button @click="gameStart" class="sidebar_content">
         Draw
@@ -57,11 +57,13 @@ const gameStart = () => {
   .sidebar_content {
     height: 100%;
     width: 20%;
-    padding: 0 2rem;
     border:1px solid black;
-    display: grid;
 	  align-items: center;
     background-color: gray;
+    text-align: center;
+    font-family: Verdana, Sans-serif;
+    font-weight: bold;
+    font-size: x-large;
   }
 
   .overlay {
@@ -74,5 +76,11 @@ const gameStart = () => {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .sidebar_content {
+      font-size: small;
+    }
   }
 </style>
