@@ -60,7 +60,7 @@ watch(() => props.reset, (newReset) => {
           Point: {{ point_arr[index] }}
         </div>
       </div>
-      <img v-if="cards[num_arr[index] - 1]" :src="`./src/components/images/cards/${cards[num_arr[index] - 1]}.png`" alt="card"/>
+      <img v-if="cards[num_arr[index] - 1]" :src="`/cards/${cards[num_arr[index] - 1]}.png`" alt="card"/>
     </div>
 
   </div>
