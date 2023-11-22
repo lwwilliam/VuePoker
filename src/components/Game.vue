@@ -20,7 +20,7 @@ function generate_number() {
 }
 
 function point_add() {
-  console.log(largest_card_index.value);
+  // console.log(largest_card_index.value);
   point_arr.value[largest_card_index.value] += 1;
 }
 
@@ -30,14 +30,12 @@ watch(() => props.start, (newStart) => {
     generate_number();
     largest_card_index.value = num_arr.value.indexOf(Math.max(...num_arr.value));
     point_add();
-    console.log(point_arr.value);
     emit('changeStart');
   }
 });
 
 watch(() => props.reset, (newReset) => {
   if (newReset) {
-    console.log('reset');
     point_arr.value = [0, 0, 0, 0, 0, 0];
     num_arr.value.splice(0);
     emit('resetPoints');

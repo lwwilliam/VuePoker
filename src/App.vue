@@ -21,12 +21,10 @@ const changeStart = () => {
 };
 
 const resetTrue = () => {
-  console.log('resetTrue');
   reset.value = true;
 };
 
 const resetFalse = () => {
-  console.log('resetTrue');
   reset.value = false;
 };
 
